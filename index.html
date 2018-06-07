@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<meta keywords="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="CSS/Style.CSS">
+	<title>Task board</title>
+  <script src="vendor/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> 
+   <script src="js/app.js"></script>
+</head>
+
+  <body ng-controller="mainCtrl">
+    <div class="wrap">
+    	<header>
+        <span class="title">Tasks&nbsp</span><span class="number_of_tasks">({{currNumTasks}})<span>
+      </header>
+      <section class="input">
+        <input type="text" placeholder="New task"><button class="add_task" ng-click="addTask()">+ Add</button>
+      </section>
+      <section class="clear">
+        <button class="clear_compleated icon-ok" ng-click="clearComp()">Clear Compleated</button><button class="clear_all icon-trash" ng-click="clearAll()">Clear All</button>
+      </section>
+      <section class="task_wrap">
+        <div class="task_item" ng-repeat="x in model" draggable="true">
+          <div class="task_text" ng-class="{'completed': x.compleated == true}" ng-click="compleateTask(x, $index)">{{x.task}}</div><button class="edit" ng-click="editTask(x, $index)">Edit</button><button class="delete icon-cancel" ng-click="deleteTask($index)"></button>
+        </div>
+      </section>
+    </div>  
+  </body>
+</html>

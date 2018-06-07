@@ -1,0 +1,89 @@
+﻿@import url(normalize.css);
+@import url(fontello.css);
+* {
+	box-sizing: border-box;
+}
+button {
+	border: none;
+	outline: none;
+}
+header {
+	margin: 15px 0;
+}
+.wrap {
+	max-width: 1150px;
+	width: 100%;
+	margin: 0 auto;
+}
+.title {
+	font: 48px sans-serif;
+}
+.number_of_tasks {
+	font: 48px sans-serif;
+	color: #cacaca;
+}
+.input [type="text"] {
+	width: calc(100% - 75px);
+	height: 40px;
+}
+.add_task {
+	background-color: #2199e8;
+	color: white;
+	height: 40px;
+	cursor: pointer;
+	padding: 10px;
+	width: 75px;
+}
+.clear {
+	margin: 15px 0;
+	text-align: right;
+}
+.clear_compleated {
+	background-color: #ffae00;
+	color: white;
+	height: 40px;
+	cursor: pointer;
+	padding: 10px;
+	margin-right: 1px;
+}
+.clear_all {
+	background-color: #ec5840;
+	color: white;
+	height: 40px;
+	cursor: pointer;
+	padding: 10px;
+}
+.task_item {
+	width: 100%;
+	margin: 5px 0;
+}
+.task_text {
+	font: 18px sans-serif;
+	font-weight: bold;
+	background-color: #f3f3f3;
+	padding: 9px;
+	width: calc(99.5% - 120px);
+	display: inline-block;
+	cursor: pointer;
+}
+.edit {
+	width: 60px;
+	cursor: pointer;
+	padding: 10px;
+	height: 40px;
+	background-color: #ec5840;
+	color: white;
+	margin-right: 0.5%;
+}
+.delete {
+	width: 60px;
+	cursor: pointer;
+	padding: 10px;
+	height: 40px;
+	background-color: #ec5840;
+	color: white;
+}
+.completed {
+	background-color: #d9ecd9;
+	text-decoration: line-through;
+}
