@@ -70,10 +70,8 @@ app.controller("mainCtrl", function ($scope) {
     }
 
     $scope.clearComp = () => {
-    	$scope.model.forEach((item, index) => {
-    		if (item.compleated) {
-    			$scope.model.splice(index, 1);
-    		}
+    	$scope.model = $scope.model.filter(item => {
+    		return !item.compleated
     	})
     	currTasksNum ();
     	setDataToLocSt ();
@@ -83,6 +81,7 @@ app.controller("mainCtrl", function ($scope) {
     	$scope.model.splice(index, 1);
     	currTasksNum ();
     	setDataToLocSt ();
+    	$scope.edit = false;
     }
 });
 
