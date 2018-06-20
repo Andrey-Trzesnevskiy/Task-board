@@ -56,11 +56,11 @@ header {
 .task_item {
 	width: 100%;
 	margin: 5px 0;
+	z-index: 10;
 }
 .task_text {
 	font: 18px sans-serif;
 	font-weight: bold;
-	background-color: #f3f3f3;
 	padding: 9px;
 	width: calc(99.5% - 120px);
 	display: inline-block;
@@ -86,4 +86,10 @@ header {
 .completed {
 	background-color: #d9ecd9;
 	text-decoration: line-through;
+}
+.draged {
+	background-color: #7cf242;
+}
+.task-color {
+	background-color: #f3f3f3;
 }

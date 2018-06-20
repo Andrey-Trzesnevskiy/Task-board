@@ -97,10 +97,12 @@ app.directive("dragndrop", function () {
 
             ctrl.init = _onInit;
             ctrl.onDragStart = onDragStart;
+            ctrl.onDrag = onDrag;
             ctrl.onDragEnd = onDragEnd;
-            ctrl.onDrop = onDrop
+            ctrl.onDrop = onDrop;
 
             $element.on('dragstart', ctrl.onDragStart);
+            $element.on('drag', ctrl.onDrag);
             $element.on('dragend', ctrl.onDragEnd);
             $element.on('dragover drop', ctrl.onDrop);
 
@@ -117,10 +119,20 @@ app.directive("dragndrop", function () {
                 isDragged = true;
                 dragedIndex = $scope.data.index;
                 $scope.$apply();
+                $element[0].classList.toggle("draged");
+                $element[0].classList.toggle("task-color");
+            }
+
+            function onDrag(event) {
+
             }
 
             function onDragEnd(event) {
                 isDragged = false;
+                $element[0].classList.toggle("draged");
+                $element[0].classList.toggle("task-color");
+                let modelJson = JSON.stringify($scope.data.model);
+    			localStorage.setItem("model", modelJson);
             }
 
             function onDrop(event) {
