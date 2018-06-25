@@ -105,6 +105,7 @@ app.directive("dragndrop", function () {
             $element.on('drag', ctrl.onDrag);
             $element.on('dragend', ctrl.onDragEnd);
             $element.on('dragover drop', ctrl.onDrop);
+            $element[0].draggable = $element[0].draggable || true;
 
             function _onInit() {
                 isDragged = false;

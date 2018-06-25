@@ -23,7 +23,7 @@
         <button class="clear_compleated icon-ok" ng-click="clearComp()">Clear Compleated</button><button class="clear_all icon-trash" ng-click="clearAll()">Clear All</button>
       </section>
       <section class="task_wrap">
-        <div class="task_item task-color" ng-repeat="x in model track by $index" draggable="true" data-dragndrop="{index: $index, model: model}">
+        <div class="task_item task-color" ng-repeat="x in model track by $index"  data-dragndrop="{index: $index, model: model}">
           <div class="task_text" ng-class="{'completed': x.compleated == true}" ng-click="compleateTask(x, $index)">{{x.task}}</div><button class="edit" ng-click="editTask(x, $index)">Edit</button><button class="delete icon-cancel" ng-click="deleteTask($index)"></button>
         </div>
       </section>
